@@ -14,7 +14,7 @@ export default function Home() {
 					bottom: "50%",
 					transform: "translate(50%, 50%)",
 					position: "absolute",
-					width: "150px",
+					width: "100%",
 					height: "150px",
 				}}
 			>

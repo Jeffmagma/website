@@ -25,10 +25,9 @@ export default function CameraControl({ children }) {
 	const vec = new THREE.Vector3();
 	// get camera and mouse information
 	const { camera, mouse } = useThree();
-	console.log(camera.aspect);
 	// every frame
 	useFrame(() => {
-		// move the camera based on mosue position
+		// move the camera based on mouse position
 		camera.position.lerp(vec.set(mouse.x * 2, 0, 11), 0.05);
 		// move children based on mouse position
 		ref.current.position.lerp(vec.set(mouse.x * 1, mouse.y * 0.1, 0), 0.1);
@@ -36,9 +35,5 @@ export default function CameraControl({ children }) {
 		ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, (-mouse.x * Math.PI) / 20, 0.1);
 	});
 	// return the children wrapped around a group parent
-	return (
-		<group ref={ref} scale={1}>
-			{children}
-		</group>
-	);
+	return <group ref={ref}>{children}</group>;
 }
