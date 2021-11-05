@@ -4,12 +4,28 @@ import * as THREE from "three";
 
 // the camera and children move
 export default function CameraControl({ children }) {
+	let x, y;
+
+	document.addEventListener("mousemove", onMouseUpdate, false);
+	document.addEventListener("mouseenter", onMouseUpdate, false);
+
+	function onMouseUpdate(e) {
+		const half_width = window.innerWidth / 2;
+		const half_height = window.innerHeight / 2;
+		x = e.pageX;
+		x -= half_width;
+		x /= half_width;
+		y = e.pageY;
+		y -= half_height;
+		y /= half_height;
+	}
 	// get a reference to a group with the children
 	const ref = useRef();
 	// create a temporary vector
 	const vec = new THREE.Vector3();
 	// get camera and mouse information
 	const { camera, mouse } = useThree();
+	console.log(camera.aspect);
 	// every frame
 	useFrame(() => {
 		// move the camera based on mosue position
@@ -21,7 +37,7 @@ export default function CameraControl({ children }) {
 	});
 	// return the children wrapped around a group parent
 	return (
-		<group ref={ref} scale={camera.aspect / 2.5}>
+		<group ref={ref} scale={1}>
 			{children}
 		</group>
 	);
