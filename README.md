@@ -1,6 +1,6 @@
 # Personal Website
 
-This is my personal website, mainly an experiment in learning [React](https://reactjs.org/), [Next.js](https://nextjs.org/), and [three.js](https://threejs.org/). I started this project after a job interview where I had to perform some simple tasks in React, despite never touching it. Even though I did horribly in the interview, the concept of React intruiged me and I set on to learn more about both the library and website design.
+This is my personal website, mainly an experiment in learning [React](https://reactjs.org/), [Next.js](https://nextjs.org/), and [three.js](https://threejs.org/). I started this project after a job interview where I had to perform some simple tasks in React, despite never touching it. Even though I didn't do so well in the interview, the concept of React intruiged me and I set on to learn more about both the library and website design.
 
 ## This website uses:
 

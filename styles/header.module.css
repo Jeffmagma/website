@@ -1,8 +1,3 @@
-canvas {
-	background-color: gray;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	width: 150px;
+.header {
+	font-family: Courier New, monospace;
 }

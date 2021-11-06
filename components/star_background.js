@@ -8,11 +8,9 @@ export default function StarBackground() {
 		<>
 			<Canvas
 				camera={{ position: [0, 0, 11], fov: 50 }}
-				style={{ position: "fixed", left: 0, top: 0, height: "100%" }}
+				style={{ position: "fixed", left: 0, top: 0, height: "100%", zIndex: -1 }}
 				className={styles.canvas}
 			>
-				<ambientLight />
-				<pointLight position={[10, 10, 10]} />
 				<Stars />
 				<CameraControl />
 			</Canvas>

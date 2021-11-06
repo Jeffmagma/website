@@ -1,27 +1,28 @@
-import CameraControl from "../components/camera_control";
 import StarBackground from "../components/star_background";
-import { Text } from "@react-three/drei";
 import Header from "../components/header";
 import { Canvas } from "@react-three/fiber";
+import styles from "../styles/index.module.css";
+import Link from "next/link";
 
 export default function Home() {
 	return (
 		<>
 			<StarBackground />
-			<Canvas
-				style={{
-					right: "50%",
-					bottom: "50%",
-					transform: "translate(50%, 50%)",
-					position: "absolute",
-					width: "100%",
-					height: "150px",
-				}}
-			>
-				<ambientLight />
-				<pointLight position={[10, 10, 10]} />
-				<Header />
-			</Canvas>
+			<div className={styles.container}>
+				<Canvas
+					style={{
+						height: "150px",
+					}}
+				>
+					<ambientLight />
+					<Header />
+				</Canvas>
+				<div>
+					<Link href="/page2">
+						<a style={{ backgroundColor: "white" }}>click here</a>
+					</Link>
+				</div>
+			</div>
 		</>
 	);
 }
