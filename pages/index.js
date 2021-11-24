@@ -3,6 +3,7 @@ import Header from "../components/header";
 import { Canvas } from "@react-three/fiber";
 import styles from "../styles/index.module.css";
 import Link from "next/link";
+import CameraControl from "../components/camera_control";
 
 export default function Home() {
 	return (
@@ -17,7 +18,8 @@ export default function Home() {
 					<ambientLight />
 					<Header />
 				</Canvas>
-				<div>
+
+				<div style={{ opacity: "50%" }}>
 					<Link href="/page2">
 						<a style={{ backgroundColor: "white" }}>click here</a>
 					</Link>
