@@ -3,12 +3,11 @@ import Header from "../components/header";
 import { Canvas } from "@react-three/fiber";
 import styles from "../styles/index.module.css";
 import Link from "next/link";
-import CameraControl from "../components/camera_control";
+import { motion } from "framer-motion";
 
 export default function Home() {
 	return (
-		<>
-			<StarBackground />
+		<motion.div layoutId="header" transition={{ duration: 1 }} initial={{ y: 0 }} animate={{ y: 0 }}>
 			<div className={styles.container}>
 				<Canvas
 					style={{
@@ -25,6 +24,6 @@ export default function Home() {
 					</Link>
 				</div>
 			</div>
-		</>
+		</motion.div>
 	);
 }

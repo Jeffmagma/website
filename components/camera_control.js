@@ -47,7 +47,7 @@ export default function CameraControl({ children }) {
 		if (isNaN(ref.current.rotation.y)) {
 			ref.current.rotation.y = 0;
 		}
-		console.log(ref.current.rotation.y);
+		//console.log(ref.current.rotation.y);
 	});
 	// return the children wrapped around a group parent
 	return <group ref={ref}>{children}</group>;
