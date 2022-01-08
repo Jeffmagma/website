@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Stars, Text } from "@react-three/drei";
+import { Stars } from "@react-three/drei";
 import CameraControl from "../components/camera_control.js";
 import styles from "../styles/star_background.module.css";
 

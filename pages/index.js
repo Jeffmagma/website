@@ -1,29 +1,19 @@
-import StarBackground from "../components/star_background";
-import Header from "../components/header";
-import { Canvas } from "@react-three/fiber";
 import styles from "../styles/index.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Header from "../components/header";
 
 export default function Home() {
 	return (
-		<motion.div layoutId="header" transition={{ duration: 1 }} initial={{ y: 0 }} animate={{ y: 0 }}>
-			<div className={styles.container}>
-				<Canvas
-					style={{
-						height: "150px",
-					}}
-				>
-					<ambientLight />
-					<Header />
-				</Canvas>
-
+		<div className={styles.container}>
+			<motion.div layoutId="header">
+				<Header />
 				<div style={{ opacity: "50%" }}>
 					<Link href="/page2">
 						<a style={{ backgroundColor: "white" }}>click here</a>
 					</Link>
 				</div>
-			</div>
-		</motion.div>
+			</motion.div>
+		</div>
 	);
 }
