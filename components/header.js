@@ -7,11 +7,11 @@ export default function Header() {
 		<Canvas
 			camera={{ position: [0, 0, 0] }}
 			style={{
-				height: "150px",
+				height: "250px",
 			}}
 		>
 			<CameraControl>
-				<Text color="#00ffff" anchorX="center" anchorY="middle" fontSize={5} position={[0, 2, 0]}>
+				<Text color="#00ffff" anchorX="center" anchorY="middle" fontSize={7.5} position={[0, 2, 0]}>
 					&lt;yan /&gt;
 				</Text>
 			</CameraControl>
