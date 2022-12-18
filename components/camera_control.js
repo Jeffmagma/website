@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import {useEffect, useRef} from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -6,8 +6,10 @@ import * as THREE from "three";
 export default function CameraControl({ children }) {
 	let mouse_x, mouse_y;
 
-	document.addEventListener("mousemove", onMouseUpdate, false);
-	document.addEventListener("mouseenter", onMouseUpdate, false);
+	useEffect(() => {
+		document.addEventListener("mousemove", onMouseUpdate, false);
+		document.addEventListener("mouseenter", onMouseUpdate, false);
+	})
 
 	function onMouseUpdate(e) {
 		const half_width = window.innerWidth / 2;
@@ -32,23 +34,23 @@ export default function CameraControl({ children }) {
 		// move the camera based on mouse position
 		camera.position.lerp(vec.set(mouse_x * 3, 0, 11), 0.05);
 		if (isNaN(camera.position.x)) {
-			console.log("camera x NaN");
+			//console.log("camera x NaN");
 			camera.position.x = 0;
 		}
 		// move children based on mouse position
 		ref.current.position.lerp(vec.set(mouse_x * 1, mouse_y * 0.1, 0), 0.1);
 		if (isNaN(ref.current.position.x)) {
-			console.log("ref x NaN");
+			//console.log("ref x NaN");
 			ref.current.position.x = 0;
 		}
 		if (isNaN(ref.current.position.y)) {
-			console.log("ref y NaN");
+			//console.log("ref y NaN");
 			ref.current.position.y = 0;
 		}
 		// rotate children based on mouse position
 		ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, (-mouse_x * Math.PI) / 20, 0.1);
 		if (isNaN(ref.current.rotation.y)) {
-			console.log("ref y rotation NaN");
+			//console.log("ref y rotation NaN");
 			ref.current.rotation.y = 0;
 		}
 		//console.log(ref.current.rotation.y);

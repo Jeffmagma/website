@@ -3,13 +3,13 @@ import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
 	return (
-		<div className="navbar">
-			<Link href="/">
-				<a className={styles.a}>home</a>
+        <div className="navbar">
+			<Link href="/" className={styles.a}>
+				home
 			</Link>
-			<Link href="/page2">
-				<a className={styles.a}>page2</a>
+			<Link href="/page2" className={styles.a}>
+				page2
 			</Link>
 		</div>
-	);
+    );
 }

@@ -4,13 +4,11 @@ import { motion } from "framer-motion";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
 
+
 export default function Home() {
-	return (
-		<div className={styles.container}>
-			<motion.div layoutId="header">
-				<Header />
-				<Navbar />
-			</motion.div>
-		</div>
+	return (<></>
 	);
 }
+
+Home.className = styles.container
+Home.xc = 200

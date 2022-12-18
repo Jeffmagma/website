@@ -6,12 +6,9 @@ import Navbar from "../components/navbar";
 
 export default function Home() {
 	return (
-		<div className={styles.container}>
-			<motion.div layoutId="header">
-				<Header />
-				<Navbar />
-			</motion.div>
-			<div style={{ color: "white" }}>some content here</div>
-		</div>
+		<div style={{ color: "white" }}>some content here</div>
 	);
 }
+
+Home.className = styles.container
+Home.xc = 100
