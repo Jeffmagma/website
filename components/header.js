@@ -4,14 +4,9 @@ import { Text } from "@react-three/drei";
 
 export default function Header() {
 	return (
-		<Canvas
-			camera={{ position: [0, 0, 0] }}
-			style={{
-				height: "250px",
-			}}
-		>
+		<Canvas camera={{ position: [0, 0, 1] }} style={{ height: "200px" }}>
 			<CameraControl>
-				<Text color="#00ffff" anchorX="center" anchorY="middle" fontSize={7.5} position={[0, 2, 0]}>
+				<Text color="#00ffff" anchorX="center" anchorY="middle" fontSize={10} position={[0, 0, 2]}>
 					&lt;yan /&gt;
 				</Text>
 			</CameraControl>

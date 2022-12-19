@@ -5,12 +5,13 @@ import Header from "./header";
 import Navbar from "./navbar";
 
 export function Layout({children, xc}) {
-    console.log("xc" + xc);
     return <>
         <StarBackground />
         <div className={styles.parent}>
             <motion.div animate={{y: xc}} transition={{ ease: "easeOut", duration: .75 }} className={styles.content}>
-                <Header />
+                <div style={{ width: "100%" }}>
+                    <Header />
+                </div>
                 <Navbar />
                 {children}
             </motion.div>
