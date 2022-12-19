@@ -1,0 +1,11 @@
+.parent {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
