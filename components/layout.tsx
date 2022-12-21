@@ -3,8 +3,14 @@ import {motion} from "framer-motion";
 import styles from "../styles/layout.module.css";
 import Header from "./header";
 import Navbar from "./navbar";
+import {ReactNode} from "react";
 
-export function Layout({children, xc}) {
+interface LayoutProps {
+    children: ReactNode
+    xc: string
+}
+
+export function Layout({children, xc}: LayoutProps) {
     return <>
         <StarBackground />
         <div className={styles.parent}>

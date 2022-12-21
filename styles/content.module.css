@@ -1,4 +1,4 @@
 .content {
-    width: 100%;
+    width: min(700px, 95%);
     color: white;
 }

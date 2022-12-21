@@ -18,9 +18,9 @@ export default function CameraControl({ children }) {
 		mouse_y = e.pageY;
 		//console.log("%d %d", mouse_x, mouse_y);
 		mouse_x -= half_width;
-		mouse_x /= parseFloat(half_width);
+		mouse_x /= half_width;
 		mouse_y -= half_height;
-		mouse_y /= parseFloat(half_height);
+		mouse_y /= half_height;
 		//console.log("%d %d", mouse_x, mouse_y);
 	}
 	// get a reference to a group with the children
@@ -28,9 +28,10 @@ export default function CameraControl({ children }) {
 	// create a temporary vector
 	const vec = new THREE.Vector3();
 	// get camera and mouse information
-	const { camera, mouse } = useThree();
+	const { camera } = useThree();
 	// every frame
 	useFrame(() => {
+		console.log(camera.position);
 		// move the camera based on mouse position
 		camera.position.lerp(vec.set(mouse_x * 3, 0, 11), 0.05);
 		if (isNaN(camera.position.x)) {
