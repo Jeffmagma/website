@@ -1,45 +1,27 @@
 import {useEffect, useRef} from "react";
 import { useThree, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import {Vector3,MathUtils} from "three";
+import {Group} from "three";
 
 // the camera and children move
 export default function CameraControl({ children }) {
-	let mouse_x, mouse_y;
-
-	useEffect(() => {
-		document.addEventListener("mousemove", onMouseUpdate, false);
-		document.addEventListener("mouseenter", onMouseUpdate, false);
-	})
-
-	function onMouseUpdate(e) {
-		const half_width = window.innerWidth / 2;
-		const half_height = window.innerHeight / 2;
-		mouse_x = e.pageX;
-		mouse_y = e.pageY;
-		//console.log("%d %d", mouse_x, mouse_y);
-		mouse_x -= half_width;
-		mouse_x /= half_width;
-		mouse_y -= half_height;
-		mouse_y /= half_height;
-		//console.log("%d %d", mouse_x, mouse_y);
-	}
 	// get a reference to a group with the children
-	const ref = useRef();
+	const ref = useRef<Group>();
 	// create a temporary vector
-	const vec = new THREE.Vector3();
+	const vec = new Vector3();
 	// get camera and mouse information
-	const { camera } = useThree();
+	const { camera, mouse } = useThree();
 	// every frame
 	useFrame(() => {
-		console.log(camera.position);
+		//console.log(mouse);
 		// move the camera based on mouse position
-		camera.position.lerp(vec.set(mouse_x * 3, 0, 11), 0.05);
+		camera.position.lerp(vec.set(mouse.x * 3, 0, 11), 0.05);
 		if (isNaN(camera.position.x)) {
 			//console.log("camera x NaN");
 			camera.position.x = 0;
 		}
 		// move children based on mouse position
-		ref.current.position.lerp(vec.set(mouse_x * 1, mouse_y * 0.1, 0), 0.1);
+		ref.current.position.lerp(vec.set(mouse.x * 1, mouse.y * 0.1, 0), 0.1);
 		if (isNaN(ref.current.position.x)) {
 			//console.log("ref x NaN");
 			ref.current.position.x = 0;
@@ -49,7 +31,7 @@ export default function CameraControl({ children }) {
 			ref.current.position.y = 0;
 		}
 		// rotate children based on mouse position
-		ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, (-mouse_x * Math.PI) / 20, 0.1);
+		ref.current.rotation.y = MathUtils.lerp(ref.current.rotation.y, (-mouse.x * Math.PI) / 20, 0.1);
 		if (isNaN(ref.current.rotation.y)) {
 			//console.log("ref y rotation NaN");
 			ref.current.rotation.y = 0;

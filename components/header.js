@@ -2,6 +2,10 @@ import { Canvas } from "@react-three/fiber";
 import CameraControl from "./camera_control";
 import { Text } from "@react-three/drei";
 
+function HeaderCamera() {
+
+}
+
 export default function Header() {
 	return (
 		<Canvas camera={{ position: [0, 0, 1] }} style={{ height: "200px" }}>

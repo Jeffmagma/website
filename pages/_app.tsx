@@ -1,15 +1,21 @@
 import "../styles/globals.css";
+import styles from "../styles/app.module.css"
 import {Layout} from "../components/layout";
 import {AppProps} from "next/app";
+import React from "react";
 
 interface CustomAppProps extends AppProps {
 	Component: AppProps["Component"] & {xc: string}
 }
 
-export default function MyApp({ Component, pageProps }: CustomAppProps) {
+const MyApp = ({ Component, pageProps }: CustomAppProps): JSX.Element  => {
+	const ref = React.createRef<HTMLDivElement>()
 	return (
-		<Layout xc={Component.xc}>
+		<div className={styles.mouse} ref={ref}>
+		<Layout xc={Component.xc} xd={ref}>
 			<Component {...pageProps}/>
-		</Layout>
+		</Layout></div>
 	);
 }
+
+export default MyApp;
