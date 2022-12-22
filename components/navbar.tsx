@@ -1,8 +1,9 @@
 import Link from "next/link";
+import styles from "../styles/navbar.module.css"
 
 export default function Navbar() {
 	return (
-        <div className="navbar" style={{display: "flex", gap: "20px"}}>
+        <div className={styles.navbar}>
 			<Link href="/">
 				home
 			</Link>
