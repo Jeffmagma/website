@@ -7,15 +7,15 @@ import {ReactNode, RefObject} from "react";
 
 interface LayoutProps {
     children: ReactNode
-    xc: string
-    xd: RefObject<any>
+    y_coord: string
+    parent_ref: RefObject<HTMLDivElement>
 }
 
-export function Layout({children, xc, xd}: LayoutProps) {
+export function Layout({children, y_coord, parent_ref}: LayoutProps) {
     return <>
-        <StarBackground parent={xd}/>
+        <StarBackground parent={parent_ref}/>
         <div className={styles.parent}>
-            <motion.div animate={{y: xc}} transition={{ ease: "easeOut", duration: .75 }} className={styles.content}>
+            <motion.div animate={{y: y_coord}} transition={{ ease: "easeOut", duration: .75 }} className={styles.content}>
                 <div style={{ width: "100%" }}>
                     <Header />
                 </div>

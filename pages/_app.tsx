@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }: CustomAppProps): JSX.Element  => {
 	const ref = React.createRef<HTMLDivElement>()
 	return (
 		<div className={styles.mouse} ref={ref}>
-		<Layout xc={Component.xc} xd={ref}>
+		<Layout y_coord={Component.xc} parent_ref={ref}>
 			<Component {...pageProps}/>
 		</Layout></div>
 	);

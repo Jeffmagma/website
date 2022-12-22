@@ -41,4 +41,4 @@ export default function Content() {
 	);
 }
 
-Content.xc = "20vh"
+Content.y_coord = "20vh"
