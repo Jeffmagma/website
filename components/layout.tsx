@@ -17,7 +17,7 @@ export function Layout({children, y_coord, parent_ref}: LayoutProps) {
         <div className={styles.parent}>
             <motion.div animate={{y: y_coord}} transition={{ ease: "easeOut", duration: .75 }} className={styles.content}>
                 <div style={{ width: "100%" }}>
-                    <Header />
+                    <Header parent={parent_ref}/>
                 </div>
                 <Navbar />
                 {children}

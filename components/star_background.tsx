@@ -7,7 +7,7 @@ import {RefObject} from "react";
 function StarCamera() {
 	const { camera, pointer } = useThree();
 	const vec = new Vector3();
-	return useFrame(() => camera.position.lerp(vec.set(pointer.x * 2, pointer.y * 1, 11), 0.1));
+	return useFrame(() => camera.position.lerp(vec.set(pointer.x * 2, pointer.y, 11), 0.1));
 }
 
 interface StarProps {
