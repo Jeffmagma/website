@@ -5,14 +5,14 @@ import {AppProps} from "next/app";
 import React from "react";
 
 interface CustomAppProps extends AppProps {
-	Component: AppProps["Component"] & {xc: string}
+	Component: AppProps["Component"] & {y_coord: string}
 }
 
 const MyApp = ({ Component, pageProps }: CustomAppProps): JSX.Element  => {
 	const ref = React.createRef<HTMLDivElement>()
 	return (
 		<div className={styles.mouse} ref={ref}>
-		<Layout y_coord={Component.xc} parent_ref={ref}>
+		<Layout y_coord={Component.y_coord} parent_ref={ref}>
 			<Component {...pageProps}/>
 		</Layout></div>
 	);
