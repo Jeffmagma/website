@@ -11,11 +11,13 @@ interface CustomAppProps extends AppProps {
 const MyApp = ({ Component, pageProps }: CustomAppProps): JSX.Element  => {
 	const ref = React.createRef<HTMLDivElement>()
 	return (
-		<div className={styles.mouse} ref={ref}>
+		<>
+			<div className={styles.mouse} ref={ref}>
 			<Layout y_coord={Component.y_coord} parent_ref={ref}>
 				<Component {...pageProps}/>
 			</Layout>
-		</div>
+			</div>
+		</>
 	);
 }
 

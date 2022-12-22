@@ -5,10 +5,11 @@ import {createRef, RefObject} from "react";
 import {Group} from "three";
 
 function HeaderCamera({children}) {
-	const { camera, pointer } = useThree();
+	const { camera, pointer, mouse } = useThree();
 	const vec = new Vector3();
 	const ref = createRef<Group>();
 	useFrame(() => {
+		console.log(mouse);
 		camera.position.lerp(vec.set(pointer.x * 2, pointer.y * .1, 11), 0.1);
 		ref.current.position.lerp(vec.set(pointer.x, pointer.y * .1, 0), 0.1);
 		ref.current.rotation.y = MathUtils.lerp( (-pointer.x * Math.PI) / 20, ref.current.rotation.y,0.1);
@@ -22,7 +23,7 @@ interface HeaderProps {
 
 export default function Header({parent}: HeaderProps) {
 	return (
-		<Canvas camera={{ position: [0, 0, 1] }} style={{ height: "200px" }} eventSource={parent}>
+		<Canvas camera={{ position: [0, 0, 1] }} style={{ height: "200px" }} eventSource={parent} eventPrefix="client">
 			<HeaderCamera>
 				<Text color="#00ffff" anchorX="center" anchorY="middle" fontSize={10} position={[0, 0, 2]}>
 					&lt;yan /&gt;
