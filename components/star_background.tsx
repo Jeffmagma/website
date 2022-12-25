@@ -1,5 +1,5 @@
 import {Canvas, useFrame, useThree} from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import {Stars} from "@react-three/drei";
 import styles from "../styles/star_background.module.css";
 import {Vector3} from "three";
 import {RefObject} from "react";
@@ -17,9 +17,9 @@ interface StarProps {
 export default function StarBackground({parent}: StarProps) {
 	return (
 		<>
-			<Canvas	camera={{ fov: 50 }} style={{ position: "fixed" }} className={styles.canvas} eventSource={parent}>
-				<Stars />
-				<StarCamera />
+			<Canvas camera={{fov: 50}} style={{position: "fixed"}} className={styles.canvas} eventSource={parent} eventPrefix="client">
+				<Stars/>
+				<StarCamera/>
 			</Canvas>
 		</>
 	);

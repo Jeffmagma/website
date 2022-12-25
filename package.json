@@ -13,9 +13,11 @@
 		"@react-three/fiber": "^8.9.1",
 		"@types/three": "^0.146.0",
 		"framer-motion": "^7.10.2",
+		"gray-matter": "^4.0.3",
 		"next": "^13.0.7",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-markdown": "^8.0.4",
 		"three": "^0.147.0"
 	},
 	"devDependencies": {

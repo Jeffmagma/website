@@ -1,18 +1,16 @@
 import {Canvas, useFrame, useThree} from "@react-three/fiber";
-import { Text } from "@react-three/drei";
-import {MathUtils, Vector3} from "three";
+import {Text} from "@react-three/drei";
+import {Group, MathUtils, Vector3} from "three";
 import {createRef, RefObject} from "react";
-import {Group} from "three";
 
 function HeaderCamera({children}) {
-	const { camera, pointer, mouse } = useThree();
+	const {camera, pointer} = useThree();
 	const vec = new Vector3();
 	const ref = createRef<Group>();
 	useFrame(() => {
-		console.log(mouse);
 		camera.position.lerp(vec.set(pointer.x * 2, pointer.y * .1, 11), 0.1);
 		ref.current.position.lerp(vec.set(pointer.x, pointer.y * .1, 0), 0.1);
-		ref.current.rotation.y = MathUtils.lerp( (-pointer.x * Math.PI) / 20, ref.current.rotation.y,0.1);
+		ref.current.rotation.y = MathUtils.lerp((-pointer.x * Math.PI) / 20, ref.current.rotation.y, 0.1);
 	});
 	return <group ref={ref}>{children}</group>;
 }
