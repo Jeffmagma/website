@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useRouter } from "next/router"
 import styles from "../styles/card.module.css"
 
 export default function Card() {
@@ -6,6 +7,8 @@ export default function Card() {
 		<div className={styles.container}>
 			<div> 𓏲 ₊˚๑ ꒰ cyan ꒱ ໑‧₊˚.ꪆ</div>
 			<div>23 | he/him | canada</div>
+			<div>router.pathname: {useRouter().pathname}</div>
+			<div>location.hostname: {typeof window !== "undefined" ? window.location.hostname : "SSR"}</div>
 			<Image className={styles.image} src="/teddy.jpg" alt="banner" width={500} height={100}/>
 			<i>i just wanna fucking die in your arms</i>
 			<div className={styles.line}></div>
