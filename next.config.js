@@ -3,7 +3,7 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: "/",
+        source: "/:path*",
         has: [{type: "host", value: "card.cyan.pink"}],
         destination: "/card"
       }
