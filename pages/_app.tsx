@@ -8,8 +8,11 @@ interface CustomAppProps extends AppProps {
 	Component: AppProps["Component"] & {y_coord: string}
 }
 
-function MyApp({Component, pageProps}: CustomAppProps): JSX.Element {
+function MyApp({Component, pageProps, ...appProps}: CustomAppProps): JSX.Element {
 	const ref = React.createRef<HTMLDivElement>()
+	if (appProps.router.pathname == "/card") {
+		return <Component {...pageProps}/>
+	}
 	return (
 		<>
 			<div className={styles.mouse} ref={ref}>
