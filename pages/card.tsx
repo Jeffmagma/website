@@ -6,7 +6,7 @@ export default function Card() {
 		<div className={styles.container}>
 			<div> 𓏲 ₊˚๑ ꒰ cyan ꒱ ໑‧₊˚.ꪆ</div>
 			<div>23 | he/him | canada</div>
-			<Image className={styles.image} src="https://i.pinimg.com/736x/ea/71/79/ea717924a7bd6c6676245849d730e096.jpg" alt="banner"/>
+			<Image className={styles.image} src="/teddy.jpg" alt="banner" width={500} height={100}/>
 			<i>i just wanna fucking die in your arms</i>
 			<div className={styles.line}></div>
 			<div className={styles.grid}>

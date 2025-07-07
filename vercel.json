@@ -9,6 +9,10 @@
 					"value": "card.cyan.pink"
 				}
 			]
+		},
+		{
+			"source": "/test",
+			"destination": "/card"
 		}
 	]
 }
