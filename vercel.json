@@ -1,6 +1,12 @@
 {
 	"rewrites": [
 		{
+			"source": "/test",
+			"destination": "/card"
+		}
+	],
+	"redirects": [
+		{
 			"source": "/",
 			"destination": "/card",
 			"has": [
@@ -8,11 +14,8 @@
 					"type": "host",
 					"value": "card.cyan.pink"
 				}
-			]
-		},
-		{
-			"source": "/test",
-			"destination": "/card"
+			],
+			"permanent": false
 		}
 	]
 }
