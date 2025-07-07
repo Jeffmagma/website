@@ -2,7 +2,7 @@
 	"rewrites": [
 		{
 			"source": "/",
-			"destination": "/thoughts",
+			"destination": "/card",
 			"has": [
 				{
 					"type": "host",
