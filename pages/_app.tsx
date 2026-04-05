@@ -10,7 +10,7 @@ interface CustomAppProps extends AppProps {
 
 function MyApp({Component, pageProps, ...appProps}: CustomAppProps): JSX.Element {
 	const ref = React.createRef<HTMLDivElement>()
-	if (appProps.router.pathname == "/card") {
+	if (appProps.router.pathname == "/card" || appProps.router.pathname == "/count") {
 		return <Component {...pageProps}/>
 	}
 	return (

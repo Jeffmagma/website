@@ -1,0 +1,654 @@
+/* CSS Reset and Global defaults are in index.css */
+
+.setupScreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.setupCard {
+  max-width: 440px;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.setupHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.setupHeader h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.25rem;
+}
+
+.setupHeader p {
+  color: #78716c;
+  font-size: 0.875rem;
+}
+
+.setupSection {
+  margin-bottom: 1.5rem;
+}
+
+.setupSection label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #44403c;
+  margin-bottom: 0.75rem;
+}
+
+.decksInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e7e5e4;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.decksInput:focus {
+  border-color: #1c1917;
+}
+
+.decksHint {
+  font-size: 0.75rem;
+  color: #a8a29e;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.playersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addPlayerBtn {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.addPlayerBtn:hover {
+  color: #1d4ed8;
+}
+
+.playersList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.playerInputRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.playerNameInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e7e5e4;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.playerNameInput:focus {
+  border-color: #1c1917;
+}
+
+.removePlayerBtn {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #a8a29e;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.removePlayerBtn:hover {
+  color: #ef4444;
+}
+
+.startBtn {
+  width: 100%;
+  padding: 1rem;
+  background: #1c1917;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.startBtn:hover {
+  background: #292524;
+}
+
+/* Game Screen */
+.gameScreen {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gameScreen {
+    padding: 2rem;
+  }
+}
+
+.gameContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .gameContainer {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.gameLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gameRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card component */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #f5f5f4;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Header */
+.gameHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backBtn {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #78716c;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.backBtn:hover {
+  background: #f5f5f4;
+}
+
+.headerTitle h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.headerTitle p {
+  font-size: 0.875rem;
+  color: #78716c;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.undoBtn, .resetBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.undoBtn {
+  background: #f5f5f4;
+  color: #57534e;
+}
+
+.undoBtn:hover:not(:disabled) {
+  background: #e7e5e4;
+}
+
+.undoBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.resetBtn {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.resetBtn:hover {
+  background: #fee2e2;
+}
+
+/* Section titles */
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a8a29e;
+  margin-bottom: 1rem;
+}
+
+/* Player rows */
+.playersSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.playerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #f5f5f4;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.playerRow:hover {
+  border-color: #e7e5e4;
+}
+
+.playerRow.active {
+  border-color: #1c1917;
+  background: #fafaf9;
+}
+
+.playerRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.playerIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d6d3d1;
+  transition: background 0.15s;
+}
+
+.playerRow.active .playerIndicator {
+  background: #1c1917;
+}
+
+.playerName {
+  font-weight: 500;
+  color: #78716c;
+  transition: color 0.15s;
+}
+
+.playerRow.active .playerName {
+  color: #1c1917;
+}
+
+.playerSuits {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.suitToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.suitToggle input {
+  display: none;
+}
+
+.suitBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.suitBadge.blackSuit {
+  background: #f5f5f4;
+  color: #44403c;
+}
+
+.suitBadge.redSuit {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.suitBadge.outOfSuit {
+  background: #e7e5e4;
+  color: #a8a29e;
+  text-decoration: line-through;
+}
+
+/* Card grid */
+.trackHeader {
+  margin-bottom: 1.5rem;
+}
+
+.trackHeader span {
+  color: #1c1917;
+  font-weight: 700;
+}
+
+.suitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .suitsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.suitColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.suitLabel {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.suitLabel.red {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.suitLabel.black {
+  color: #1c1917;
+  background: #fafaf9;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.cardBtn {
+  position: relative;
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #e7e5e4;
+  background: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.cardBtn:hover:not(:disabled) {
+  border-color: #1c1917;
+}
+
+.cardBtn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.cardBtn:disabled {
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  color: #d6d3d1;
+  cursor: not-allowed;
+}
+
+.cardBtn.redCard:hover:not(:disabled) {
+  color: #dc2626;
+}
+
+.cardCountBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1c1917;
+  color: #fff;
+  font-size: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stats */
+.statsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.statsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+.statLabel {
+  width: 24px;
+  font-weight: 700;
+  color: #44403c;
+  font-size: 0.875rem;
+}
+
+.statBarBg {
+  flex: 1;
+  height: 8px;
+  background: #f5f5f4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.statBarFill.green {
+  background: #22c55e;
+}
+
+.statBarFill.orange {
+  background: #f97316;
+}
+
+.statBarFill.red {
+  background: #ef4444;
+}
+
+.statCount {
+  width: 48px;
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #78716c;
+}
+
+/* History */
+.historySection {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.historyList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.historyEmpty {
+  text-align: center;
+  padding: 2rem 0;
+  color: #a8a29e;
+  font-size: 0.875rem;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background: #fafaf9;
+  border-radius: 12px;
+  border: 1px solid #f5f5f4;
+}
+
+.historyItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.historyCardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.historyCardIcon.red {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.historyCardIcon.black {
+  background: #e7e5e4;
+  color: #44403c;
+}
+
+.historyPlayerName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1c1917;
+}
+
+.historyTime {
+  font-size: 0.625rem;
+  color: #a8a29e;
+}
+
+/* Scrollbar */
+.playersList::-webkit-scrollbar,
+.historyList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.playersList::-webkit-scrollbar-track,
+.historyList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.playersList::-webkit-scrollbar-thumb,
+.historyList::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 2px;
+}
