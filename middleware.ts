@@ -5,6 +5,8 @@ export function middleware(req: NextRequest) {
   const subdomain = host.split(".")[0];
 
   if (subdomain === "card") {
+    const { pathname } = req.nextUrl;
+    if (pathname.includes(".")) return;
     return NextResponse.rewrite(new URL("/card", req.url));
   }
 }
